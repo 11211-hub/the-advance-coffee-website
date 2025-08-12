@@ -328,12 +328,14 @@ header .navbar {
   align-items: center;
   justify-content: space-between;
   width: calc(100% / 3 - 110px);
+  mix-blend-mode: screen;
 }
 .menu-section .menu-list .menu-item .menu-image {
   width: 83%;
   aspect-ratio: 1;
   margin-bottom: 15px;
   object-fit: contain;
+  
 }
 .menu-section .menu-list .menu-item .name {
   margin: 12px 0;
