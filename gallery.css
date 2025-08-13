@@ -170,6 +170,87 @@ header .navbar {
 }
 
 
+/* ===========================
+   RESPONSIVE STYLES
+   =========================== */
+
+/* For tablets & small laptops */
+@media (max-width: 1024px) {
+  /* Reduce gallery columns to 2 */
+  .gallery-section .gallery-list .gallery-item {
+    width: calc(50% - 16px);
+  }
+}
+
+/* For tablets & large phones */
+@media (max-width: 768px) {
+  /* Show menu toggle buttons */
+  .navbar :where(#menu-open-button, #menu-close-button) {
+    display: block;
+    font-size: var(--font-size-l);
+    color: var(--white-color);
+  }
+
+  /* Make nav menu slide in */
+  .navbar .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    background: var(--primary-color);
+    height: 100%;
+    width: 250px;
+    padding: 80px 20px;
+    gap: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+  }
+
+  /* Show when active */
+  body.show-mobile-menu .navbar .nav-menu {
+    right: 0;
+  }
+
+  /* Bigger menu items on mobile */
+  .navbar .nav-menu .nav-link {
+    font-size: var(--font-size-l);
+    width: 100%;
+  }
+
+  /* Stack gallery items */
+  .gallery-section .gallery-list {
+    gap: 20px;
+  }
+  .gallery-section .gallery-list .gallery-item {
+    width: 100%;
+  }
+
+  /* Stack footer vertically */
+  .footer-section .section-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+/* For small phones */
+@media (max-width: 480px) {
+  /* Smaller logo text */
+  .navbar .nav-logo .logo-text {
+    font-size: var(--font-size-l);
+  }
+
+  /* Smaller section titles */
+  section .section-title {
+    font-size: var(--font-size-l);
+    padding: 40px 0 60px;
+  }
+
+  /* Smaller footer text */
+  .footer-section :where(.copyright-text, .policy-link) {
+    font-size: var(--font-size-s);
+  }
+}
 
 
 

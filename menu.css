@@ -235,6 +235,101 @@ header .navbar {
   margin: 0 5px;
 }
 
+/* ===========================
+   RESPONSIVE STYLES
+   =========================== */
+
+/* Large tablets & small laptops */
+@media (max-width: 1024px) {
+  /* Reduce gap in menu section */
+  .menu-section .menu-list {
+    gap: 50px;
+  }
+  .menu-section .menu-list .menu-item {
+    width: calc(50% - 50px);
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  /* Show hamburger menu button */
+  .navbar :where(#menu-open-button, #menu-close-button) {
+    display: block;
+    font-size: var(--font-size-l);
+    color: var(--white-color);
+    background: none;
+  }
+
+  /* Hide menu initially on mobile */
+  .navbar .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    flex-direction: column;
+    background: var(--primary-color);
+    height: 100%;
+    width: 250px;
+    padding: 80px 20px;
+    gap: 15px;
+    transition: right 0.3s ease;
+    z-index: 10;
+  }
+
+  /* When mobile menu is shown */
+  body.show-mobile-menu .navbar .nav-menu {
+    right: 0;
+  }
+
+  /* Larger clickable links */
+  .navbar .nav-menu .nav-link {
+    font-size: var(--font-size-l);
+    padding: 12px;
+  }
+
+  /* Stack menu items vertically in menu section */
+  .menu-section .menu-list {
+    gap: 40px;
+    justify-content: center;
+  }
+  .menu-section .menu-list .menu-item {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  /* Footer stacked */
+  .footer-section .section-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+  /* Smaller navbar logo text */
+  .navbar .nav-logo .logo-text {
+    font-size: var(--font-size-l);
+  }
+
+  /* Section titles smaller */
+  section .section-title {
+    font-size: var(--font-size-l);
+    padding: 40px 0 60px;
+  }
+
+  /* Menu item text */
+  .menu-section .menu-list .menu-item .name {
+    font-size: var(--font-size-m);
+  }
+  .menu-section .menu-list .menu-item .text {
+    font-size: var(--font-size-s);
+  }
+
+  /* Footer text smaller */
+  .footer-section :where(.copyright-text, .policy-link) {
+    font-size: var(--font-size-s);
+  }
+}
 
 
 
